@@ -18,7 +18,6 @@ import com.UserService.UserService.service.ReceiptAIService;
 
 @RestController
 @RequestMapping("/api/receipt")
-@CrossOrigin(origins = "http://localhost:5173")
 public class ReceiptController {
 
     private static final Set<String> ALLOWED_EXTENSIONS =
