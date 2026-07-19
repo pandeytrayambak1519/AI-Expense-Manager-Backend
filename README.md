@@ -107,6 +107,22 @@ mvn spring-boot:run
 - Email Notifications
 - Export Reports (PDF/Excel)
 
+
+## 🌐 Live Demo
+
+- Frontend: https://ai-expense-manager-frontend.vercel.app/
+- Backend API: https://ai-expense-manager-backend-1.onrender.com
+
+---
+
+## 🚀 Deployment
+
+| Service | Platform |
+|---------|----------|
+| Frontend | Vercel |
+| Backend | Render |
+| Database | Neon PostgreSQL |
+
 ---
 
 # 👨‍💻 Author
