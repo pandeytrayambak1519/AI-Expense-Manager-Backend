@@ -1,6 +1,5 @@
 package com.UserService.UserService.service;
 
-
 import java.io.File;
 
 import org.springframework.stereotype.Service;
@@ -8,63 +7,29 @@ import org.springframework.stereotype.Service;
 import net.sourceforge.tess4j.ITesseract;
 import net.sourceforge.tess4j.Tesseract;
 
-
 @Service
 public class OCRService {
 
-
-
-    public String extractText(File file){
-
+    public String extractText(File file) {
 
         ITesseract tesseract = new Tesseract();
 
+        // Windows me local development ke liye
+        // Render/Linux ke liye baad me alag setup chahiye
+        String os = System.getProperty("os.name").toLowerCase();
 
-        tesseract.setDatapath(
-            "C:/Program Files/Tesseract-OCR/tessdata"
-        );
-
+        if (os.contains("win")) {
+            tesseract.setDatapath("C:/Program Files/Tesseract-OCR/tessdata");
+        }
 
         tesseract.setLanguage("eng");
-
-
-        // Improve receipt scanning
         tesseract.setPageSegMode(6);
         tesseract.setOcrEngineMode(1);
 
-
-
         try {
-
-
-            String text =
-                    tesseract.doOCR(file);
-
-
-
-            System.out.println(
-                    "OCR TEXT =====>"
-            );
-
-
-            System.out.println(text);
-
-
-
-            return text;
-
-
-
+            return tesseract.doOCR(file);
+        } catch (Exception e) {
+            throw new RuntimeException("OCR failed", e);
         }
-        catch(Exception e){
-
-
-            throw new RuntimeException(
-                    "OCR failed",
-                    e
-            );
-
-        }
-
     }
 }
