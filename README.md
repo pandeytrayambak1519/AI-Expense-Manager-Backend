@@ -1,80 +1,156 @@
 # 💰 AI Expense Manager - Backend
 
-A backend REST API built using Spring Boot to manage personal expenses. The application allows users to manage expenses, categories, budgets, and scan receipts using OCR. Data is stored in PostgreSQL.
+A robust **Spring Boot REST API** for managing personal expenses, budgets, and receipt scanning using **OCR**. The backend provides secure APIs for expense tracking, category management, budget planning, and AI-powered receipt data extraction with PostgreSQL as the primary database.
 
 ---
 
-# 🚀 Features
+## 🚀 Features
 
-- 👤 User Management
-- 💰 Expense Management (CRUD)
+- 👤 User Profile Management
+- 💸 Expense Management (CRUD)
 - 📂 Category Management
-- 📊 Budget Management
-- 📷 OCR-based Receipt Scanner
-- 🌐 REST APIs
-- 🗄 PostgreSQL Database
+- 📊 Budget Planning & Tracking
+- 🧾 OCR-Based Receipt Scanner
+- 🤖 AI-Powered Expense Analysis
+- 🌐 RESTful API Architecture
+- ⚡ Global Exception Handling
+- ✅ Request Validation
+- 🗄 PostgreSQL Database Integration
+- ☁️ Cloud Deployment (Render + Neon)
 
 ---
 
-# 🛠️ Tech Stack
+## 🛠️ Tech Stack
 
+### Backend
 - Java 21
 - Spring Boot
 - Spring Data JPA
 - Hibernate
-- PostgreSQL
 - Maven
+
+### Database
+- PostgreSQL
+- Neon PostgreSQL
+
+### OCR & AI
 - Tesseract OCR
+
+### Deployment
+- Render
+- GitHub
+
+### Tools
+- Postman
+- IntelliJ IDEA
+- VS Code
+- Git
+- GitHub
 
 ---
 
-# 📁 Project Structure
+## 📂 Project Structure
 
 ```text
-src
-├── controller
-├── service
-├── repository
-├── entity
-├── dto
-├── config
-├── exception
-└── util
+src/
+├── controller/
+├── service/
+├── repository/
+├── entity/
+├── dto/
+├── security/
+├── config/
+├── exception/
+├── util/
+└── resources/
 ```
 
 ---
 
-# ⚙️ Getting Started
+## 🌐 Live Demo
 
-## 1. Clone the repository
+### 🚀 Frontend
+https://ai-expense-manager-frontend.vercel.app/
+
+### ⚙️ Backend API
+https://ai-expense-manager-backend-1.onrender.com
+
+### 🗄 Database
+Neon PostgreSQL
+
+---
+
+## 📡 API Modules
+
+- 👤 User APIs
+- 💰 Expense APIs
+- 📂 Category APIs
+- 📊 Budget APIs
+- 🧾 OCR Receipt Scanner APIs
+
+---
+
+## 🌐 Sample API Endpoints
+
+| Method | Endpoint | Description |
+|---------|----------|-------------|
+| POST | `/api/auth/register` | Register a new user |
+| POST | `/api/auth/login` | User login |
+| GET | `/api/expenses` | Get all expenses |
+| POST | `/api/expenses` | Add a new expense |
+| PUT | `/api/expenses/{id}` | Update an expense |
+| DELETE | `/api/expenses/{id}` | Delete an expense |
+| POST | `/api/receipt/upload` | Upload receipt for OCR |
+| GET | `/api/budget` | Get budget details |
+
+---
+
+## 🗄 Database
+
+- PostgreSQL
+- Neon Cloud Database
+
+---
+
+## ⚙️ Environment Variables
+
+Configure your `application.properties` or environment variables.
+
+```properties
+SPRING_DATASOURCE_URL=
+
+SPRING_DATASOURCE_USERNAME=
+
+SPRING_DATASOURCE_PASSWORD=
+
+JWT_SECRET=
+
+TESSERACT_PATH=
+```
+
+---
+
+## 🚀 Getting Started
+
+### 1️⃣ Clone Repository
 
 ```bash
 git clone https://github.com/pandeytrayambak1519/AI-Expense-Manager-Backend.git
 ```
 
-## 2. Navigate to the project
+### 2️⃣ Navigate to Project
 
 ```bash
 cd AI-Expense-Manager-Backend
 ```
 
-## 3. Configure PostgreSQL
+### 3️⃣ Install Dependencies
 
-Create a PostgreSQL database and update your database credentials in:
-
-```properties
-application.properties
+```bash
+mvn clean install
 ```
 
-Example:
-
-```properties
-spring.datasource.url=jdbc:postgresql://localhost:5432/expensemanager
-spring.datasource.username=your_username
-spring.datasource.password=your_password
-```
-
-## 4. Run the project
+### 4️⃣ Run Application
 
 ```bash
 mvn spring-boot:run
@@ -82,40 +158,23 @@ mvn spring-boot:run
 
 ---
 
-# 📌 Main Modules
+## 🏗 Architecture
 
-- User Module
-- Expense Module
-- Category Module
-- Budget Module
-- OCR Receipt Scanner
-
----
-
-# 🗄 Database
-
-- PostgreSQL
-
----
-
-# 📈 Future Improvements
-
-- Spring Security
-- JWT Authentication
-- AI-based Expense Categorization
-- Monthly Expense Analytics
-- Email Notifications
-- Export Reports (PDF/Excel)
-
-
-## 🌐 Live Demo
-
-- Frontend: https://ai-expense-manager-frontend.vercel.app/
-- Backend API: https://ai-expense-manager-backend-1.onrender.com
+```text
+React Frontend
+       │
+     Axios
+       │
+Spring Boot REST API
+       │
+Spring Data JPA
+       │
+ PostgreSQL (Neon)
+```
 
 ---
 
-## 🚀 Deployment
+## ☁️ Deployment
 
 | Service | Platform |
 |---------|----------|
@@ -125,10 +184,42 @@ mvn spring-boot:run
 
 ---
 
-# 👨‍💻 Author
+## 🔮 Future Enhancements
+
+- 🔐 Two-Factor Authentication (2FA)
+- 📧 Email Verification
+- 🤖 AI-Based Expense Categorization
+- 📈 Advanced Expense Analytics
+- 📄 PDF & Excel Report Export
+- 🐳 Docker Support
+- ⚡ Redis Caching
+- 📊 Admin Dashboard
+- 🔔 Push Notifications
+
+---
+
+## 🤝 Contributing
+
+Contributions are welcome.
+
+1. Fork the repository
+2. Create your feature branch
+3. Commit your changes
+4. Push the branch
+5. Open a Pull Request
+
+---
+
+## 👨‍💻 Author
 
 **Trayambak Pandey**
 
 Java Full Stack Developer
 
-GitHub: [pandeytrayambak1519](https://github.com/pandeytrayambak1519)
+- GitHub: https://github.com/pandeytrayambak1519
+
+---
+
+## ⭐ Support
+
+If you found this project useful, please consider giving it a ⭐ on GitHub.
